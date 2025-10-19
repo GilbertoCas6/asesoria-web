@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados | Asesoría Migratoria</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=10">
+    <style>
+        /* ===== GALERÍA DE RESULTADOS ===== */
+        .resultados {
+            text-align: center;
+            padding: 4em 2em;
+            color: #f1f1f1;
+        }
+
+        .resultados h2 {
+            color: #d4af37;
+            font-size: 1.9em;
+            margin-bottom: 0.4em;
+        }
+
+        .resultados p {
+            color: #ccc;
+            font-size: 1.05em;
+            max-width: 700px;
+            margin: 0 auto 2em;
+        }
+
+        .galeria-resultados {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 2.5em;
+        }
+
+        .resultado-item {
+            background: #1a1a1a;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 12px;
+            width: 260px;
+            padding: 1em;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .resultado-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .resultado-item img,
+        .resultado-item video {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1em;
+            cursor: pointer;
+        }
+
+        .resultado-item h4 {
+            color: #d4af37;
+            font-size: 1.05em;
+            font-weight: bold;
+            margin-bottom: 0.4em;
+        }
+
+        .resultado-item p {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 2em;
+            color: #d4af37;
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .close-lightbox:hover {
+            color: #fff;
+        }
+
+        /* ===== BOTÓN CONTACTO FINAL ===== */
+        .cta-contacto {
+            text-align: center;
+            margin-top: 4em;
+        }
+
+        .cta-btn {
+            background-color: #d4af37;
+            color: #111;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 0.9em 2em;
+            border-radius: 8px;
+            border: 2px solid #d4af37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: #d4af37;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .resultado-item {
+                width: 85%;
+            }
+            .galeria-resultados {
+                gap: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header id="main-header">
+    <div class="logo">
+        <img src="img/logo.jpg" alt="Logo" class="logo-img">
+        <span>Lic. Brenda Castillo</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="resultados.html" class="nav-link active">Resultados</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+    </nav>
+</header>
+
+<main class="fade-in">
+    <section class="resultados">
+        <h2>Casos Reales</h2>
+        <p>Algunos de nuestros clientes satisfechos que lograron su visa con nuestra asesoría personalizada.</p>
+
+        <div class="galeria-resultados">
+            <div class="resultado-item">
+                <img src="img/visa1.png" alt="Visa aprobada 1">
+                <h4>Visa aprobada — Santo Domingo</h4>
+                <p>Asesoría completa en todo el proceso hasta la aprobación exitosa.</p>
+            </div>
+
+            <div class="resultado-item">
+                <video controls poster="img/chat1.png">
+                    <source src="videos/testimonio1.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <h4>Testimonio en video</h4>
+                <p>Una clienta comparte su experiencia tras recibir la aprobación de su visa.</p>
+            </div>
+
+            <div class="resultado-item">
+                <img src="img/visa2.png" alt="Visa aprobada 2">
+                <h4>Aprobación exitosa para visa B1/B2</h4>
+                <p>Proceso guiado y revisión detallada de documentos.</p>
+            </div>
+
+            <div class="resultado-item">
+                <img src="img/visa3.png" alt="Visa aprobada 3">
+                <h4>Familia completó su proceso</h4>
+                <p>Acompañamiento en grupo familiar para citas y entrevistas.</p>
+            </div>
+
+            <div class="resultado-item">
+                <img src="img/cita_confirmada.jpg" alt="Confirmación cita">
+                <h4>Confirmación de cita consular</h4>
+                <p>Confirmación oficial del proceso de solicitud y cita en la embajada.</p>
+            </div>
+
+            <div class="resultado-item">
+                <img src="img/ds160_completado.jpg" alt="Formulario DS-160 completado">
+                <h4>Formulario DS-160 completado</h4>
+                <p>Formulario llenado y validado exitosamente por nuestro equipo.</p>
+            </div>
+        </div>
+
+        <div class="cta-contacto">
+            <a href="contacto.html" class="cta-btn">Contáctanos</a>
+        </div>
+    </section>
+</main>
+
+<!-- ===== LIGHTBOX STRUCTURE ===== -->
+<div class="lightbox" id="lightbox">
+    <span class="close-lightbox" id="closeLightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Vista ampliada">
+</div>
+
+<footer>
+    <p>© 2025 Lic. Brenda Castillo - Asesoría Migratoria y Jurídica</p>
+</footer>
+
+<script>
+    // Lightbox funcional
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('closeLightbox');
+    const imgs = document.querySelectorAll('.resultado-item img');
+
+    imgs.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,932 @@
+/* ====== GENERAL ====== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom, #0b0b0b 0%, #121212 100%);
+    color: #f1f1f1;
+    line-height: 1.6;
+    animation: fadeIn 0.6s ease-out;
+}
+
+h1, h2, h3 {
+    margin: 0.5em 0;
+    font-weight: 600;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ====== HEADER ====== */
+header {
+    background-color: #0b0b0b;
+    color: #d4af37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #d4af37;
+    letter-spacing: 0.5px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* ====== NAV ====== */
+nav a {
+    color: #d4af37;
+    margin-left: 1.5em;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* ====== HERO ====== */
+.hero {
+    background: radial-gradient(circle at center, #1a1a1a, #000);
+    color: white;
+    text-align: center;
+    padding: 10em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-position 0.5s ease;
+}
+
+.hero-content {
+    animation: fadeInUp 1.1s ease-out;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 2.2em;
+    color: #fff;
+}
+
+.hero p {
+    margin-top: 1em;
+    color: #e0e0e0;
+    font-size: 1.05em;
+}
+
+/* ====== BOTONES ====== */
+.btn {
+    display: inline-block;
+    margin-top: 1em;
+    background-color: #d4af37;
+    color: #111;
+    text-decoration: none;
+    padding: 0.8em 1.7em;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b69125;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+/* ====== ABOUT ====== */
+.about {
+    text-align: center;
+    padding: 5em 2em;
+    background: #141414;
+}
+
+.about h2 {
+    color: #d4af37;
+}
+
+/* ====== SERVICES ====== */
+.services {
+    text-align: center;
+    padding: 5em 2em;
+    background: transparent;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.services h2 {
+    color: #d4af37;
+    font-size: 1.8em;
+    margin-bottom: 1.5em;
+}
+
+.service-list {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background: #1c1c1c;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 280px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+/* ====== BOTÓN CONTACTO DEBAJO DE SERVICIOS ====== */
+.cta-contacto {
+    text-align: center;
+    margin-top: 3em;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.cta-btn {
+    background-color: #d4af37;
+    color: #111;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.9em 2em;
+    border-radius: 8px;
+    border: 2px solid #d4af37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.cta-btn:hover {
+    background-color: transparent;
+    color: #d4af37;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ====== CONTACT ====== */
+.contact {
+    text-align: center;
+    padding: 5em 2em;
+    background: radial-gradient(circle at center, #1a1a1a, #0b0b0b);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.contact h2 {
+    color: #d4af37;
+    margin-bottom: 0.5em;
+}
+
+.contact p {
+    color: #ccc;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2em;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.contact-buttons .btn {
+    background: #111;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8em 1.6em;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-buttons .btn:hover {
+    background: #d4af37;
+    color: #111;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+.icon-btn {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contact-buttons .btn:hover .icon-btn {
+    transform: scale(1.1);
+    filter: brightness(1.15);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background-color: #0d0d0d;
+    color: #d4af37;
+    text-align: center;
+    padding: 1.5em;
+    font-size: 0.95em;
+    letter-spacing: 0.3px;
+    border-top: 1px solid #222;
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1em;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 0.5em 1em;
+    }
+
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn, .cta-btn {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 6em 1.5em;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* ====== TESTIMONIOS ====== */
+.testimonios {
+    text-align: center;
+    padding: 5em 2em;
+    background: radial-gradient(circle at center, #121212, #0b0b0b);
+    color: #f1f1f1;
+    animation: fadeInUp 1.1s ease-out forwards;
+}
+
+.testimonios h2 {
+    color: #d4af37;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.testimonios p {
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 2.5em;
+    font-size: 1.05em;
+}
+
+/* Galería de imágenes responsiva */
+.galeria-testimonios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    justify-items: center;
+    align-items: center;
+}
+
+.galeria-testimonios img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(212, 175, 55, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.galeria-testimonios img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .testimonios {
+        padding: 3.5em 1.5em;
+    }
+
+    .galeria-testimonios {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-testimonios img {
+        max-width: 90%;
+    }
+}
+
+/* ====== DETALLE DE SERVICIOS (VERSIÓN MEJORADA Y CENTRADA) ====== */
+.detalle-servicios {
+    text-align: center;
+    margin: 5em auto;
+    max-width: 900px;
+    background: linear-gradient(145deg, #111 0%, #1a1a1a 100%);
+    padding: 3em 2.5em;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    color: #f1f1f1;
+    animation: fadeInUp 1.2s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detalle-servicios:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+/* Títulos */
+.detalle-servicios h3 {
+    color: #d4af37;
+    font-size: 1.5em;
+    margin: 2em 0 0.6em;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Línea elegante debajo */
+.detalle-servicios h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    margin: 0.4em auto 0;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+
+/* Listas */
+.detalle-servicios ul,
+.detalle-servicios ol {
+    text-align: left;
+    display: inline-block;
+    margin: 1em auto 2em;
+    padding-left: 1.5em;
+    line-height: 1.8;
+    font-size: 1.05em;
+    color: #e6e6e6;
+}
+
+.detalle-servicios ul li {
+    list-style: none;
+    position: relative;
+    margin-bottom: 0.6em;
+    padding-left: 1em;
+}
+
+.detalle-servicios ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.detalle-servicios ol li {
+    margin-bottom: 0.6em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .detalle-servicios {
+        max-width: 90%;
+        padding: 2em 1.5em;
+    }
+
+    .detalle-servicios h3 {
+        font-size: 1.2em;
+    }
+}
+
+.detalle-servicios hr {
+    border: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    margin: 2em auto;
+    width: 70%;
+}
+
+.detalle-servicios h3 {
+    color: #d4af37;
+    font-size: 1.3em;
+    margin-top: 1.6em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.detalle-servicios h3::after {
+    content: "";
+    display: block;
+    width: 120px; /* 🔹 más largo */
+    height: 3px;  /* 🔹 más grueso */
+    background: linear-gradient(
+            to right,
+            transparent 10%,
+            #d4af37 50%,
+            transparent 90%
+    );
+    margin: 0.6em auto 0; /* 🔹 centrado y con espacio */
+    border-radius: 2px; /* 🔹 bordes suaves */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+/* 🔹 Efecto suave al pasar el mouse (opcional y elegante) */
+.detalle-servicios h3:hover::after {
+    width: 140px;
+    opacity: 1;
+}
+
+
+.detalle-servicios ul li,
+.detalle-servicios ol li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInItem 0.6s ease forwards;
+}
+
+.detalle-servicios ul li:nth-child(1) { animation-delay: 0.1s; }
+.detalle-servicios ul li:nth-child(2) { animation-delay: 0.2s; }
+.detalle-servicios ul li:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInItem {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detalle-servicios:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.detalle-servicios ul li,
+.detalle-servicios ol li {
+    font-size: 1.05em;
+    color: #eaeaea;
+    font-weight: 300;
+}
+
+@media (min-width: 992px) {
+    .detalle-servicios ul li,
+    .detalle-servicios ol li {
+        font-size: 1.1em;
+    }
+
+    .detalle-servicios h3 {
+        font-size: 1.45em;
+    }
+
+    .detalle-servicios {
+        max-width: 620px;
+        padding: 3em 3em;
+    }
+}
+
+/* ====== RESULTADOS ====== */
+.resultados {
+    text-align: center;
+    padding: 5em 2em;
+    background: radial-gradient(circle at center, #111, #0b0b0b);
+    color: #f1f1f1;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.resultados h2 {
+    color: #d4af37;
+    font-size: 1.9em;
+    margin-bottom: 0.5em;
+    letter-spacing: 1px;
+}
+
+.resultados p {
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 2.5em;
+    font-size: 1.05em;
+}
+
+/* Galería de resultados */
+.galeria-resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    justify-items: center;
+    align-items: start;
+}
+
+.resultado-item {
+    background: #1a1a1a;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resultado-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+}
+
+/* Videos e imágenes */
+.resultado-item video,
+.resultado-item img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.descripcion {
+    color: #ccc;
+    font-size: 1em;
+    margin-top: 0.8em;
+    font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .resultados {
+        padding: 3.5em 1.5em;
+    }
+
+    .galeria-resultados {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-item {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .resultado-item img,
+    .resultado-item video {
+        max-width: 100%;
+    }
+}
+
+/* ====== RESULTADOS ====== */
+.resultados {
+    text-align: center;
+    padding: 5em 2em;
+    background: radial-gradient(circle at center, #121212, #0b0b0b);
+    color: #f1f1f1;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.resultados h2 {
+    color: #d4af37;
+    font-size: 1.9em;
+    margin-bottom: 0.4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ====== TÍTULOS DORADOS (HERO) ====== */
+.highlight {
+    color: #d4af37;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.resultados p {
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 3em;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.galeria-resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2em;
+    justify-items: center;
+}
+
+.resultado-item {
+    background: #1c1c1c;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    max-width: 360px;
+    transition: all 0.3s ease;
+}
+
+.resultado-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+/* Imagen y video centrados */
+.resultado-item img,
+.resultado-item video {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: contain;
+    max-height: 250px;
+    display: block;
+    margin: 0 auto 1em;
+}
+
+/* Títulos igual al estilo de “Servicios” */
+.resultado-item h3 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.6em;
+}
+
+.resultado-item p {
+    font-size: 0.95em;
+    color: #ccc;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+/* Clickables (abrir imagen en nueva pestaña) */
+.resultado-item.clickable {
+    cursor: pointer;
+}
+
+.resultado-item.clickable:hover {
+    border-color: #d4af37;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .galeria-resultados {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====== TÍTULOS DORADOS EN SERVICIOS ====== */
+.service-item h3 {
+    color: #d4af37;
+    font-weight: 600;
+    font-size: 1.2em;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.6em;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
+}
+
+/* ====== AJUSTE DE COLOR PARA TITULOS DE SERVICIOS ====== */
+.service-item h3 {
+    color: #d4af37 !important; /* Amarillo dorado como los otros títulos */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Mantiene el texto descriptivo con el mismo color y formato */
+.service-item p {
+    color: #ddd;
+    font-size: 0.95em;
+    margin-top: 0.6em;
+    line-height: 1.5;
+}
+/* ====== AJUSTE DE CENTRADO Y COLOR DE SERVICIOS ====== */
+.services {
+    text-align: center;
+}
+
+.service-list {
+    display: flex;
+    justify-content: center; /* 🔹 Centra horizontalmente los cuadros */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.service-item h3 {
+    color: #d4af37 !important; /* 🔹 Título dorado */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.05em;
+}
+
+.service-item p {
+    color: #ddd;
+    font-size: 0.95em;
+    margin-top: 0.6em;
+    line-height: 1.5;
+}
+
+
+/* === Ajuste de centrado directo para cuando no existe .service-list === */
+.services > .service-item {
+    display: inline-block;
+    margin: 1em;
+    vertical-align: top;
+}
+
+.services {
+    text-align: center;
+}
+
+header {
+    transition: all 0.4s ease;
+}
+
+header.scrolled {
+    background-color: rgba(11, 11, 11, 0.9);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+}
+
+/* ====== AJUSTES FINALES PARA VERSIÓN MÓVIL ====== */
+@media (max-width: 768px) {
+    /* 🔹 Más aire visual entre secciones */
+    .hero,
+    .services,
+    .resultados,
+    .contact {
+        padding: 3.5em 1.5em;
+    }
+
+    /* 🔹 Hero más centrado y legible */
+    .hero h1 {
+        font-size: 1.7em;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1em;
+        margin-top: 0.8em;
+    }
+
+    /* 🔹 Espaciado vertical entre tarjetas de servicios */
+    .service-item {
+        margin-bottom: 1.8em;
+        width: 90%;
+        max-width: 350px;
+    }
+
+    /* 🔹 Botón de llamada a la acción */
+    .cta-btn {
+        width: 90%;
+        margin-top: 1.5em;
+        font-size: 1em;
+    }
+
+    /* 🔹 Header y menú más organizados */
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8em;
+        padding: 1em;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    nav a {
+        margin: 0.3em 0;
+        font-size: 1.05em;
+    }
+
+    /* 🔹 Ajuste visual de imágenes y videos en resultados */
+    .resultado-item {
+        padding: 1em;
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .resultado-item img,
+    .resultado-item video {
+        max-width: 95%;
+        border-radius: 10px;
+    }
+
+    /* 🔹 Contacto más limpio */
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .contact-buttons .btn {
+        width: 85%;
+        justify-content: center;
+        font-size: 1em;
+    }
+
+    /* 🔹 Footer centrado y legible */
+    footer {
+        font-size: 0.9em;
+        padding: 2em 1em;
+    }
+}
+@media (min-width: 769px) {
+    .service-list {
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1100px; /* Ajusta según el ancho total que desees */
+    }
+}
+@media (max-width: 768px) {
+    main {
+        margin-top: 100px; /* o lo que mida tu header */
+    }
+}
